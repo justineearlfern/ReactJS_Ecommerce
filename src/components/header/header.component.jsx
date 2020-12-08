@@ -8,19 +8,23 @@ import {auth }  from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { selectCurrentUser } from '../../redux/user/user.selectors'
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.styles.scss';
 
-
-
+console.log('' + selectCurrentUser);
 
 const Header = ({ currentUser, hidden }) => (
     <div className='header'>
       <Link className='logo-container' to='/'>
         <Logo className='logo' />
       </Link>
+      <div>
+      <h1>
+        {selectCurrentUser}
+      </h1>
+      </div>
       <div className='options'>
         <Link className='option' to='/shop'>
           SHOP
